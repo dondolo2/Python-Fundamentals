@@ -11,6 +11,12 @@ def assign_variables():
     # Assign the boolean True to the variable a.
     # Assign the boolean False to the variable b.
     # Return the values of x, y, z, a, and b as a tuple.
+    x = 10
+    y = float(20.5)
+    z = "Hello, World!"
+    a = True
+    b = False
+    return (x, y, z, a, b)
 
 def get_variable_type(variable):
     """
@@ -24,6 +30,8 @@ def get_variable_type(variable):
     """
     # Get the data type of the input variable.
     # Return the data type as a string.
+    return str(type(variable))
+
 
 def get_variable_types():
     """
@@ -39,6 +47,12 @@ def get_variable_types():
     # Get the data type of a using the get_variable_type function.
     # Get the data type of b using the get_variable_type function.
     # Return the data types as a tuple.
+    x = 10
+    y = float(20.5)
+    z = "Hello, World!"
+    a = True
+    b = False
+    return (type(x), type(y), type(z), type(a), type(b))
 
 def arithmetic_operations():
     """
@@ -54,6 +68,13 @@ def arithmetic_operations():
     # Calculate the division of x by y.
     # Calculate the modulus of x and y.
     # Return the results as a tuple.
+    x = 10
+    y = float(20.5)
+    z = 2
+    a = 100.4
+    b = 69
+    return (x + y, x - y, x * y, x / y, x % y)
+
 
 def get_numbers():
     """
@@ -66,6 +87,15 @@ def get_numbers():
     # Iterate through numbers from 0 to 5.
     # Add each number to the list.
     # Return the list of numbers.
+    container = []
+    for i in range(6):
+        container.append(i)
+    return container
 
 if __name__ == "__main":
-    pass
+    # pass
+    assign_variables()
+    get_variable_types()
+    get_variable_type(12.5)
+    arithmetic_operations()
+    get_numbers()
