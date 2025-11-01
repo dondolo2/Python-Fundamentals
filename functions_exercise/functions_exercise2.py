@@ -10,6 +10,26 @@
         # If the AGE is less than 17 print "You are young"
         # If the Age is more than 65 print "You are too old"  
     # Return all the inputs
+def get_user_input():
+    username = input("Enter your Username: ")
+
+    while True:
+        age_input = input("Enter your Age: ")
+        if not age_input.isdigit():  
+            print("Not an Integer, Enter a valid age!")
+            continue  
+
+        age = int(age_input)
+
+        if age < 17:
+            print("You are young")
+        elif age > 65:
+            print("You are too old")
+        else:
+            break
+
+    email = input("Enter your email address: ")
+    return username, age, email
 
 
 
@@ -21,8 +41,16 @@
     # If the username is an empty string return False
     # Return the boolean
 
-def validate_Username():
-   pass
+def validate_Username(username) -> bool:
+    if username == "":
+        return False
+    for char in username:
+        if not char.isalpha():
+            return False
+        else:
+            pass
+       
+    return True
 
 
 # 3. Pass the parameters to the function below 'display_user_info'
@@ -32,8 +60,11 @@ def validate_Username():
         # 'Email    : <email>
     # return 'Thanks!, Details captured.'
 
-def display_user_info():
-    pass
+def display_user_info(username, age, email):
+    print(f"Username : {username}")
+    print(f"Age      : {age}")
+    print(f"Email    : {email}")
+    return "Thanks!, Details captured."
    
 
 # 4. Call all the functions
@@ -41,9 +72,15 @@ def display_user_info():
         # write a loop to and take new input for the username and take it to be evaluated 'validate_username'
     # if 'validate_username' returns True then you can display the user Info   
 def main():
-    pass
+    username, age, email = get_user_input()
+
+    while not validate_Username(username):
+        print("Invalid username! Please try again.")
+        username = input("Enter a valid Username: ")
+
+    print(display_user_info(username, age, email))
 
 
 if __name__ == "__main__":
    #call the main function
-    pass
+    main()

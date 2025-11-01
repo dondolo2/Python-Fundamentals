@@ -1,3 +1,5 @@
+from area import rectangle_area, circle_area
+
 # Exercise 1: Function Parameters
 # Instructions:
 # In this exercise, you will define functions with parameters.
@@ -8,7 +10,7 @@
 
 def add_numbers(a, b):
     # Your code here
-    pass
+    print(a + b)
 
 # Exercise 2: Return Values
 # Instructions:
@@ -20,7 +22,10 @@ def add_numbers(a, b):
 
 def calculate_sum(numbers):
     # Your code here
-    pass
+    total = 0
+    for i in range(len(numbers)):
+        total += numbers[i]
+    return total
 
 # Exercise 3: Function Scoping
 # Instructions:
@@ -34,7 +39,9 @@ global_variable = "I am a global variable"
 def demonstrate_scoping():
     # Define a local variable here
     # Print both the global and local variables
-    pass
+    global_variable = "But I am NOT a global variable"
+    print(global_variable)
+print(global_variable)
 
 # Exercise 4: Function Libraries
 # Instructions:
@@ -51,13 +58,16 @@ def demonstrate_scoping():
 
 def calculate_area(length, width, radius):
     # Example 1: 
-    area_rectangle = 1 # Use the rectangle_area function from the Python module you created 
+    area_rectangle = rectangle_area(length, width) # Use the rectangle_area function from the Python module you created 
     print("Area of the rectangle:", area_rectangle)
 
     # Example 2: 
-    area_circle = 2 # Use the circle_area function from the Python module you created
+    area_circle = circle_area(radius) # Use the circle_area function from the Python module you created
     print("Area of the circle:", area_circle)
 
 if __name__ == "__main__":
-    pass
+    add_numbers(5, 7)
+    print(calculate_sum([1, 2, 3, 4, 5]))
+    demonstrate_scoping()
+    calculate_area(4, 5, 2)
     
