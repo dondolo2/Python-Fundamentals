@@ -9,6 +9,15 @@ In this exercise, you will use conditional statements to categorise people based
 # - If age is less than 18, print "You are a minor."
 # - If age is between 18 and 65 (inclusive), print "You are an adult."
 # - If age is 66 or higher, print "You are a senior citizen."
+age = int(input("Enter your age: "))
+if isinstance(age, int):
+    if age < 18:
+        print("You are a minor.")
+    elif 18 <= age <= 65:
+        print("You are an adult.")
+    elif age > 65:
+        print("You are a senior citizen.")
+
 
 
 """
@@ -21,6 +30,10 @@ In this exercise, you will use a loop to print numbers up to a user-defined limi
 # 2. Use a  for loop to iterate from 1 to the user-defined limit (inclusive) and print each number.
 # Use a while loop to iterate from 1 to the user-defined limit (inclusive) and print each number.
 # Initialise a variable to start the loop
+limit_str = input("Enter your number limit: ")
+limit_num = int(limit_str)
+for i in range(1, limit_num + 1):
+    print(i)
 
 
 """
@@ -32,7 +45,11 @@ In this exercise, you will use a loop and loop control statements to print odd n
 # Convert the limit_str to an integer
 # 2. Use a for loop to iterate from 1 to the user-defined limit (inclusive).
 # 3. Inside the loop, use a loop control statement to skip even numbers and print odd numbers.
-
+limit_str = input("Enter your number limit: ")
+limit_num = int(limit_str)
+for i in range(1, limit_num + 1):
+    if i % 2 == 1:
+        print(i)
 
 """
 Exercise: Nested Loops
@@ -57,4 +74,7 @@ eg output:
 # The outer loop iterates from 10 to 1.
 # The inner loop iterates from the user-defined multiplier to 1.
 # Fill in the code to complete the nested loops:
-
+multiplier = int(input("Enter a number multiplier: "))
+for i in range(1, 10):
+    for j in range(1, multiplier + 1):
+        print( i, "x", j)
